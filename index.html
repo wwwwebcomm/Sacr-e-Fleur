@@ -1,125 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">  <head>
- </head>
-<style>
-  /* Sets the background to a clean, modern grey */
-  body {
-    background-color: #f4f7f6;
-    font-family: sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 20px;
-    line-height: 1.6;
-  }
-
-  /* Professional Navy Blue for your titles */
-  h1, h2, h3 {
-    color: #003366;
-  }
-
-  /* THE MOBILE FIX: Makes sure pictures and boxes don't slide off the screen */
-  img, div, table, section {
-    max-width: 100%;
-    height: auto;
-    box-sizing: border-box;
-  }
-
-  /* Makes your content look like a neat white card */
-  .container {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  }
-</style>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sacrée Fleur | Montmartre Traditional French Cuisine</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sacrée Fleur | Mobile Fixed</title>
+
+    <style>
+        /* THE "FORCE MOBILE" FIX */
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* This stops the horizontal scrolling */
+            background-color: #f4f7f6;
+            font-family: sans-serif;
+            -webkit-text-size-adjust: 100%; /* Prevents iPhone from changing font size */
+        }
+
+        * {
+            box-sizing: border-box;
+            max-width: 100% !important; /* Forces EVERYTHING to stay inside the phone edges */
+        }
+
+        /* NAVIGATION MENU */
+        nav {
+            background: #003366;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        nav ul li a { color: white; text-decoration: none; font-size: 14px; }
+
+        /* CONTENT CONTAINER */
+        .container {
+            padding: 15px;
+        }
+
+        /* IMAGE FIX - MAKES THEM FILL THE WIDTH */
+        img {
+            width: 100% !important;
+            height: auto !important;
+            display: block;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        /* TEXT SIZING FOR MOBILE */
+        h1 { font-size: 24px; color: #003366; }
+        p { font-size: 16px; line-height: 1.5; color: #333; }
+
+        /* MAP FIX */
+        iframe {
+            width: 100% !important;
+            height: 250px !important;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">SACRÉE FLEUR</div>
+        <div style="font-weight: bold; font-size: 20px; margin-bottom: 5px;">SACRÉE FLEUR</div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Booking</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content" data-aos="fade-up">
-            <h1>Traditional French Beef</h1>
-            <p>Authentic Cuisine in the Heart of Montmartre</p>
-            <a href="#menu" class="btn">View Menu</a>
-        </div>
-    </header>
+    <div class="container">
+        <h1>Traditional French Beef</h1>
+        <p>Located in Montmartre, Paris.</p>
 
-    <section id="about" class="section">
-        <div class="container" data-aos="fade-right">
-            <h2>The Art of the Steak</h2>
-            <p>Located at the foot of Sacré-Cœur, we specialize in high-quality French beef served on hot stones.</p>
+        <img src="steak.jpg" alt="Steak">
+        
+        <div id="menu">
+            <h2>Our Menu</h2>
+            <p>Onion Soup - €12</p>
+            <p>Filet de Bœuf - €32</p>
         </div>
-    </section>
 
-    <section id="menu" class="section bg-light">
-        <div class="container">
-            <h2 data-aos="fade-up">Our Traditional Menu</h2>
-            <div class="menu-container">
-                <div class="menu-category" data-aos="fade-up">
-                    <h3>Les Entrées</h3>
-                    <div class="menu-row"><span>French Onion Soup</span> <span>€12</span></div>
-                    <div class="menu-row"><span>Escargots de Bourgogne</span> <span>€14</span></div>
-                </div>
-                <div class="menu-category" data-aos="fade-up">
-                    <h3>Our Signature Beef</h3>
-                    <div class="menu-row"><span>Faux-Filet (Sirloin)</span> <span>€26</span></div>
-                    <div class="menu-row"><span>Filet de Bœuf</span> <span>€32</span></div>
-                </div>
-                <div class="menu-category" data-aos="fade-up">
-                    <h3>Les Desserts</h3>
-                    <div class="menu-row"><span>Crème Brûlée</span> <span>€9</span></div>
-                </div>
-            </div>
+        <img src="interior.jpg" alt="Interior">
+
+        <div style="margin-top: 20px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.7712318897!2d2.3458!3d48.887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUzJzEzLjIiTiAywrAyMCc0NC45IkU!5e0!3m2!1sen!2sfr!4v1611111111111!5m2!1sen!2sfr"></iframe>
         </div>
-    </section>
+    </div>
 
-    <section id="gallery" class="section">
-        <div class="container">
-            <h2 data-aos="fade-up">Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item" data-aos="zoom-in"><img src="steak.jpg" alt="Steak"></div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100"><img src="creme-brulee.jpg" alt="Dessert"></div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200"><img src="interior.jpg" alt="Atmosphere"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section bg-dark">
-        <div class="container">
-            <h2 class="text-white">Reserve a Table</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <p class="text-white"><strong>Address:</strong> 50 Rue de Clignancourt, 75018 Paris</p>
-                    <form id="booking-form">
-                        <input type="text" placeholder="Name" required>
-                        <input type="date" required>
-                        <button type="submit" class="btn">Confirm Booking</button>
-                    </form>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.364303493721!2d2.3458316768393527!3d48.88937009852233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e67eda1ea7f%3A0xf4f45094f734da46!2sSacr%C3%A9e%20Fleur!5e0!3m2!1sen!2sfr!4v1708000000000!5m2!1sen!2sfr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
