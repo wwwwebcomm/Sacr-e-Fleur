@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sacrée Fleur | Animated Mobile Site</title>
+    <title>Sacrée Fleur | Final Version</title>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
@@ -17,98 +17,124 @@
             overflow-x: hidden; 
         }
 
-        /* MENU FIX: Professional look for Mobile & Desktop */
+        /* FIXING THE MENU - Making it 100% visible */
         nav {
-            background: #003366;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            background-color: #003366 !important; /* Strong Navy Blue */
+            width: 100%;
+            padding: 20px 0;
+            position: relative; /* Changed from sticky to ensure it shows up first */
+            z-index: 9999;
+            display: block !important;
         }
+
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            color: #ffffff !important;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-decoration: none;
+            display: block;
+        }
+
         nav ul {
             list-style: none;
             display: flex;
+            flex-direction: row; /* Horizontal on desktop */
             justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap; /* Keeps it from breaking on small phones */
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
         }
 
+        nav ul li a {
+            color: #ffffff !important; /* Forces text to be white */
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 5px 10px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 5px;
+        }
+
+        /* MOBILE MENU ADJUSTMENT */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            nav ul li a {
+                font-size: 14px;
+            }
+        }
+
+        /* Container and Content */
         .container {
             width: 90%;
             max-width: 800px;
-            margin: 20px auto;
+            margin: 30px auto;
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        /* IMAGE FIX: Forces them to be "Superb" */
         img {
             width: 100% !important;
             height: auto !important;
-            display: block;
-            margin: 15px 0;
             border-radius: 8px;
+            margin: 20px 0;
         }
 
-        h1, h2 { font-family: 'Playfair Display', serif; color: #003366; margin-bottom: 15px; }
-
-        /* THE MAP */
-        .map-frame {
-            width: 100%;
-            height: 300px;
-            border: 0;
-            border-radius: 8px;
-        }
+        h1, h2 { font-family: 'Playfair Display', serif; color: #003366; }
     </style>
 </head>
 <body>
 
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">SACRÉE FLEUR</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <header style="background: #003366; color: white; padding: 60px 20px; text-align: center;">
+    <header style="background: #003366; color: white; padding: 80px 20px; text-align: center;">
         <div data-aos="fade-up">
-            <h1>Sacrée Fleur</h1>
-            <p>Traditional French Cuisine</p>
+            <h1 style="color: white;">Traditional French Beef</h1>
+            <p>Authentic Cuisine in Montmartre</p>
         </div>
     </header>
 
     <div class="container" data-aos="fade-right">
-        <h2>About Us</h2>
-        <p>Experience the finest beef in Montmartre, served on hot stones.</p>
+        <h2>Our Story</h2>
+        <p>Welcome to our kitchen. We specialize in high-quality meat served on hot stones.</p>
     </div>
 
     <div class="container" data-aos="zoom-in">
-        <h2>Our Gallery</h2>
-        <img src="steak.jpg" alt="Steak Image">
+        <h2>The Food</h2>
+        <img src="steak.jpg" alt="Steak">
         <img src="interior.jpg" alt="Restaurant Interior">
     </div>
 
     <div class="container" data-aos="fade-up">
-        <h2>Location</h2>
-        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.637380126989!2d2.3453883!3d48.8842187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e437c357f77%3A0x67c05009139265f6!2sSacr%C3%A9e%20Fleur!5e0!3m2!1sen!2sfr!4v1710000000000!5m2!1sen!2sfr"></iframe>
+        <h2>Find Us</h2>
+        <iframe style="width:100%; height:300px; border:0; border-radius:8px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.360124707248!2d2.3468!3d48.8894"></iframe>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000, // Animations last 1 second
-            once: true      // Animation happens only once while scrolling
-        });
+        AOS.init({ duration: 1000, once: true });
     </script>
 </body>
 </html>
