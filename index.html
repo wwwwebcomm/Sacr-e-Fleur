@@ -2,72 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sacrée Fleur | Mobile Fixed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacrée Fleur | Animated Mobile Site</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
     <style>
-        /* THE "FORCE MOBILE" FIX */
-        html, body {
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; /* This stops the horizontal scrolling */
-            background-color: #f4f7f6;
-            font-family: sans-serif;
-            -webkit-text-size-adjust: 100%; /* Prevents iPhone from changing font size */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background-color: #f4f7f6; 
+            font-family: 'Poppins', sans-serif; 
+            overflow-x: hidden; 
         }
 
-        * {
-            box-sizing: border-box;
-            max-width: 100% !important; /* Forces EVERYTHING to stay inside the phone edges */
-        }
-
-        /* NAVIGATION MENU */
+        /* MENU FIX: Professional look for Mobile & Desktop */
         nav {
             background: #003366;
-            color: white;
             padding: 15px;
-            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav ul {
             list-style: none;
-            padding: 0;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
+            flex-wrap: wrap; /* Keeps it from breaking on small phones */
         }
-        nav ul li a { color: white; text-decoration: none; font-size: 14px; }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-        /* CONTENT CONTAINER */
         .container {
-            padding: 15px;
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        /* IMAGE FIX - MAKES THEM FILL THE WIDTH */
+        /* IMAGE FIX: Forces them to be "Superb" */
         img {
             width: 100% !important;
             height: auto !important;
             display: block;
-            margin: 10px 0;
-            border-radius: 5px;
+            margin: 15px 0;
+            border-radius: 8px;
         }
 
-        /* TEXT SIZING FOR MOBILE */
-        h1 { font-size: 24px; color: #003366; }
-        p { font-size: 16px; line-height: 1.5; color: #333; }
+        h1, h2 { font-family: 'Playfair Display', serif; color: #003366; margin-bottom: 15px; }
 
-        /* MAP FIX */
-        iframe {
-            width: 100% !important;
-            height: 250px !important;
+        /* THE MAP */
+        .map-frame {
+            width: 100%;
+            height: 300px;
             border: 0;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div style="font-weight: bold; font-size: 20px; margin-bottom: 5px;">SACRÉE FLEUR</div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#menu">Menu</a></li>
@@ -75,24 +80,35 @@
         </ul>
     </nav>
 
-    <div class="container">
-        <h1>Traditional French Beef</h1>
-        <p>Located in Montmartre, Paris.</p>
-
-        <img src="steak.jpg" alt="Steak">
-        
-        <div id="menu">
-            <h2>Our Menu</h2>
-            <p>Onion Soup - €12</p>
-            <p>Filet de Bœuf - €32</p>
+    <header style="background: #003366; color: white; padding: 60px 20px; text-align: center;">
+        <div data-aos="fade-up">
+            <h1>Sacrée Fleur</h1>
+            <p>Traditional French Cuisine</p>
         </div>
+    </header>
 
-        <img src="interior.jpg" alt="Interior">
-
-        <div style="margin-top: 20px;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.7712318897!2d2.3458!3d48.887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUzJzEzLjIiTiAywrAyMCc0NC45IkU!5e0!3m2!1sen!2sfr!4v1611111111111!5m2!1sen!2sfr"></iframe>
-        </div>
+    <div class="container" data-aos="fade-right">
+        <h2>About Us</h2>
+        <p>Experience the finest beef in Montmartre, served on hot stones.</p>
     </div>
 
+    <div class="container" data-aos="zoom-in">
+        <h2>Our Gallery</h2>
+        <img src="steak.jpg" alt="Steak Image">
+        <img src="interior.jpg" alt="Restaurant Interior">
+    </div>
+
+    <div class="container" data-aos="fade-up">
+        <h2>Location</h2>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.637380126989!2d2.3453883!3d48.8842187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e437c357f77%3A0x67c05009139265f6!2sSacr%C3%A9e%20Fleur!5e0!3m2!1sen!2sfr!4v1710000000000!5m2!1sen!2sfr"></iframe>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Animations last 1 second
+            once: true      // Animation happens only once while scrolling
+        });
+    </script>
 </body>
 </html>
